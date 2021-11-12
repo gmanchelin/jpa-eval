@@ -123,8 +123,8 @@ public class App {
 			em.persist(fish3);
 			
 			
-			//PRODUCTS
 			
+			//PRODUCTS
 			Product product1 = new Product();
 			product1.setCode("312CLC");
 			product1.setLabel("Cat Litter");
@@ -139,10 +139,8 @@ public class App {
 			product2.setLabel("Aquarium Filter");
 			product2.setType(ProdType.CLEANING);
 			product2.setPrice(74.99);
-
 			product2.addPetStore(petStore1);
 			em.persist(product2);
-
 			
 			Product product3 = new Product();
 			product3.setCode("934CKC");
@@ -155,7 +153,11 @@ public class App {
 			petStore1.addProduct(product3);
 			em.persist(petStore1);
 			petStore2.addProduct(product2);
+			petStore2.addProduct(product1);
 			em.persist(petStore2);
+			petStore3.addProduct(product3);
+			petStore3.addProduct(product1);
+			em.persist(petStore3);
 			
 			et.commit();
 			
